@@ -1,0 +1,284 @@
+@charset "UTF-8";
+html {
+  font-size: 10px;
+}
+:root {
+  --main-color: #bf2d2e;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #333;
+  font-family: Verdana, Geneva, sans-serif;
+  line-height: 25px;
+  margin: auto;
+  background-color: #f6f6f6;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+dt,
+dl,
+dd,
+form {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 35px;
+  font-size: 12px;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+a:active {
+  outline: none;
+}
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+:focus {
+  -moz-outline-style: none;
+}
+.clear {
+  clear: both;
+}
+a img {
+  border: 0;
+}
+.row {
+  margin: 0;
+}
+html {
+  line-height: 1;
+}
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: SourceHanSansCN-Normal;
+}
+*::selection {
+  color: #fff;
+  background-color: #005bbc;
+  text-shadow: none;
+}
+*::-moz-selection {
+  color: #fff;
+  background-color: #005bbc;
+  text-shadow: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  outline: 0;
+}
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  outline: 0;
+  color: #222;
+}
+.active {
+  color: var(--main-color);
+}
+/* 头部 */
+header {
+  height: 114px;
+  padding: 25px 0;
+  background-color: #ffffff;
+}
+
+header .logo {
+  float: left;
+  width: 133px;
+  height: 64px;
+}
+header ul {
+  margin-left: 125px;
+  float: left;
+  line-height: 64px;
+  height: 100%;
+}
+header ul li {
+  float: left;
+  width: 126px;
+}
+header ul li a {
+  font-family: SourceHanSansCN-Normal;
+  font-size: 20px;
+}
+header ul li:hover a {
+  color: var(--main-color);
+}
+
+.wrap {
+  width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* banner */
+.banner {
+  height: 814px;
+  background: url("../images/home/banner.jpg");
+}
+
+/* 新闻快讯 */
+.news {
+  height: 214px;
+  background-color: #f5f3f3;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+.news .news-logo {
+  width: 184px;
+  height: 94px;
+  background-color: #bf2d2e;
+  text-align: center;
+  padding: 20px 0;
+  float: left;
+}
+.news .news-logo .title {
+  font-size: 30px;
+  color: #ffffff;
+  opacity: 0.9;
+}
+.news .news-logo .sub-title {
+  font-size: 23px;
+  color: #ffffff;
+  opacity: 0.7;
+  font-family: SourceHanSansCN-Light;
+  margin-top: 8px;
+}
+
+.news .news-item-time {
+  width: 77px;
+  height: 95px;
+  text-align: center;
+  float: left;
+  margin-left: 60px;
+}
+.news .news-item-time .news-time-top {
+  background-color: #bf2d2e;
+  opacity: 0.7;
+  height: 56px;
+  line-height: 56px;
+  font-size: 34px;
+  color: #ffffff;
+}
+.news .news-item-time .news-time-bottom {
+  background-color: #bf2d2e;
+  height: 38px;
+  line-height: 38px;
+  font-size: 16px;
+  color: #ffffff;
+}
+.news .news-item-context {
+  float: left;
+  margin-left: 17px;
+  width: 490px;
+}
+.news .news-item-context .news-context-top {
+  height: 23px;
+  font-family: SourceHanSansCN-Regular;
+  font-size: 24px;
+  color: #000000;
+}
+.news .news-item-context2 {
+  width: 382px;
+}
+.news .news-item-context .news-context-bottom {
+  font-family: SourceHanSansCN-Normal;
+  font-size: 18px;
+  color: #6c6a6a;
+  margin-top: 14px;
+  line-height: 30px;
+}
+/* 合作伙伴 */
+.partners {
+  height: 654px;
+  background: url("../images/home/partners.jpg") 100% 100%;
+}
+/* footer */
+footer {
+  height: 385px;
+  background-color: #121315;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+footer .footer-item-box {
+  padding-top: 85px;
+  float: left;
+}
+footer .footer-code {
+  float: right;
+  width: 350px;
+  height: 100%;
+  background: url("../images/home/anli.png") 100% 100% no-repeat;
+}
+footer .footer-item-box .footer-item {
+  padding: 0 50px;
+  position: relative;
+  float: left;
+}
+footer .footer-item-box .footer-item:first-of-type {
+  padding-left: 0;
+}
+footer .footer-item-box .footer-item::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 21px;
+  background-color: #fff;
+  right: 0;
+  top: 2px;
+}
+footer .footer-item-box .footer-item:last-of-type::before {
+  content: "";
+  background-color: transparent;
+}
+footer .footer-item-box .title {
+  font-size: 24px;
+  line-height: 23px;
+  margin-bottom: 36px;
+}
+footer .footer-item-box li {
+  margin-top: 10px;
+}
+footer .footer-item-box a {
+  color: #ffffff;
+  font-size: 18px;
+}
