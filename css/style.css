@@ -130,7 +130,7 @@ a:focus {
   margin: 0 auto;
 }
 
-/* 首页start */
+/* 网站首页start */
 /* 头部 */
 header {
   height: 114px;
@@ -164,6 +164,7 @@ header ul li {
   float: left;
   width: 126px;
   position: relative;
+  box-sizing: border-box;
 }
 header ul li.on:after {
   content: "";
@@ -766,7 +767,7 @@ footer .footer-item-box a {
   color: #ffffff;
   font-size: 18px;
 }
-/* 首页end */
+/* 网站首页end */
 
 /* 内页 */
 
