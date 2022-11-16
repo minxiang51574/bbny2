@@ -512,7 +512,7 @@ header li:hover .home-nav a {
   height: 51px;
   text-align: center;
   line-height: 51px;
-  background: url("../images/六角形.png") 100% 100% no-repeat;
+  background: url("../images/six.png") 100% 100% no-repeat;
   font-size: 22px;
   letter-spacing: 0px;
   color: #ffffff;
@@ -577,7 +577,7 @@ header li:hover .home-nav a {
 .submitMes {
   height: 827px;
   background-color: #201011;
-  background: url("../images/案例背景.jpg") 100% 100% no-repeat;
+  background: url("../images/al-bg.jpg") 100% 100% no-repeat;
 }
 .submitMes .submitContent {
   height: 145px;
@@ -648,7 +648,7 @@ header li:hover .home-nav a {
 .companyContent {
   height: 585px;
   background: rgba(5, 0, 0, 0.7);
-  background: url("../images/新闻背景.png") 100% 100% no-repeat;
+  background: url("../images/newsBg.png") 100% 100% no-repeat;
 }
 .companyDetails {
   padding: 0 70px;
