@@ -7,9 +7,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no" />
     <title>九味牛</title>
     <meta name="keywords" content="九味牛" />
     <meta name="description" content="九味" />
@@ -21,110 +21,373 @@
 
 <body>
     <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="iconfont/iconfont.css" />
     <!-- 头部 - common -->
     <Header class="header">
         <div class="wrap">
-            <img src="./images/home/LOGO.jpg" alt="" class="logo">
+            <img src="./images/LOGO.jpg" alt="" class="logo">
             <ul>
-                <li><a href="" class="active">企业介绍</a></li>
-                <li><a href="">产品展示</a></li>
-                <li><a href="">专属定制</a></li>
+                <li>
+                    <a href="/" class="active home">首页</a>
+                    <div class="home-nav">
+                        <a href="">企业文化</a>
+                        <a href="">企业介绍</a>
+                    </div>
+                </li>
+                <li><a href="./product.html">产品展示</a></li>
+                <li><a href="./serviceInfo.html">专属定制</a></li>
                 <li><a href="">九味牛</a></li>
-                <li><a href="">客户案例</a></li>
+                <li><a href="./case.html">客户案例</a></li>
                 <li><a href="">企业动态</a></li>
                 <li><a href="">企业咨询</a></li>
                 <li><a href="">联系我们</a></li>
                 <li><a href="">官方旗舰店</a></li>
             </ul>
         </div>
-        "
+        <div class="navBg"></div>
     </Header>
+
     <!-- banner - common-->
     <div class="banner"></div>
     <!-- 新闻快讯-->
-    <div class="news">
+    <div class="newsFlash">
         <div class="wrap">
-            <div class="news-logo">
+            <div class="newsFlash-logo">
                 <div class="title">新闻快讯</div>
                 <div class="sub-title">News Flash</div>
             </div>
-            <div class="news-item-time">
-                <div class="news-time-top">11</div>
-                <div class="news-time-bottom">2022-11</div>
+            <div class="newsFlash-item-time">
+                <div class="newsFlash-time-top">11</div>
+                <div class="newsFlash-time-bottom">2022-11</div>
             </div>
-            <div class="news-item-context">
-                <div class="news-context-top">用调理食材改变你的餐桌</div>
-                <div class="news-context-bottom">调理食品在英语国家中叫做“Preparedfoods”，翻译成中文是“经过洗切或其他预处理，可直接进行烹饪的预制食品</div>
+            <div class="newsFlash-item-context">
+                <div class="newsFlash-context-top">用调理食材改变你的餐桌</div>
+                <div class="newsFlash-context-bottom">
+                    调理食品在英语国家中叫做“Preparedfoods”，翻译成中文是“经过洗切或其他预处理，可直接进行烹饪的预制食品
+                </div>
             </div>
-            <div class="news-item-time">
-                <div class="news-time-top">11</div>
-                <div class="news-time-bottom">2022-11</div>
+            <div class="newsFlash-item-time">
+                <div class="newsFlash-time-top">11</div>
+                <div class="newsFlash-time-bottom">2022-11</div>
             </div>
-            <div class="news-item-context news-item-context2">
-                <div class="news-context-top">用调理食材改变你的餐桌</div>
-                <div class="news-context-bottom">调理食品在英语国家中叫做"Preparedfoods"翻译成中文是“经过洗切或其他预处理，</div>
+            <div class="newsFlash-item-context newsFlash-item-context2">
+                <div class="newsFlash-context-top">用调理食材改变你的餐桌</div>
+                <div class="newsFlash-context-bottom">
+                    调理食品在英语国家中叫做"Preparedfoods"翻译成中文是“经过洗切或其他预处理，
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 合作伙伴 -->
+    <div class="cooperativePartner">
+        <div class="wrap">
+            <div class="cooperationContent">
+                <ul>
+                    <li class="cooperation-first">
+                        <p class="coop-title">合作伙伴</p>
+                        <p class="coop-subtitle">cooperative partner</p>
+                        <p class="coop-content">行业期许 我们的最大动力</p>
+                        <p class="blankLine"></p>
+                    </li>
+                    <li><img src="./images/合作伙伴.png" alt=""></li>
+                    <li><img src="./images/合作伙伴.png" alt=""></li>
+                    <li><img src="./images/合作伙伴.png" alt=""></li>
+                    <li><img src="./images/合作伙伴.png" alt=""></li>
+                    <li><img src="./images/合作伙伴.png" alt=""></li>
+                    <li><img src="./images/合作伙伴.png" alt=""></li>
+                    <li><img src="./images/合作伙伴.png" alt=""></li>
+                    <li><img src="./images/合作伙伴.png" alt=""></li>
+                </ul>
             </div>
 
         </div>
     </div>
-    <!-- 合作伙伴 -->
-    <div class="partners"></div>
     <!-- 关于我们  -->
-    <!-- 产品介绍 -->
-    <!-- 工艺介绍 -->
-    <!-- 研发 -->
-    <!-- 提交信息 -->
-    <!-- 客户案例 -->
-    <!-- 公司新闻 -->
-    <!-- 底部 - common  -->
-    <footer>
+    <div class="aboutUs">
         <div class="wrap">
-            <div class="footer-item-box">
-                <div class="footer-item">
-                    <h3 class="title">产品展示</h3>
-                    <ul>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                    </ul>
-                </div>
-                <div class="footer-item">
-                    <h3 class="title">产品展示</h3>
-                    <ul>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                    </ul>
-                </div>
-                <div class="footer-item">
-                    <h3 class="title">产品展示</h3>
-                    <ul>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                    </ul>
-                </div>
-                <div class="footer-item">
-                    <h3 class="title">产品展示</h3>
-                    <ul>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                        <li><a href="">火锅</a></li>
-                    </ul>
-                </div>
+            <div class="about-content">
+                <div class="wrap-title">关于我们<span class="warp-subtitle">ABOUT US</span></div>
+                <p class="wrap-introduce">
+                    成都九味牛食品有限公司，是一家聚焦于泛火锅产业，专业从事调理食品研究、生产、营销一体的现代食品生产企业。拥有最前沿加工技术和设备，依靠信息化、数字化、互联网，建立EMS、CRM、ERP数据中心，打造数字研发体系和数字化工厂，以解决客户痛点为出发点，为客户设计方案。
+                </p>
+                </br>
+                <p class="wrap-introduce">
+                    公司于2021年9月成立，厂区占地面积18000平米，拥有数字化生产车间6000平米，年产调理肉制品3万吨，我们秉承“更标准”、“更安全”、“更美味”的产品理念，致力为餐饮企业提供“综合成本更优”、“更具差异化”和“更具消费者粘性的调理食材智慧解决方案。
+                </p>
+                <button class="wrap-more">查看更多 ></button>
             </div>
-            <div class="footer-code">
-
+            <div class="videoBox">
+                <i class="iconfont icon-yunhang videopaly"></i>
+                <video src="./images/video.mp4"></video>
             </div>
-
         </div>
-    </footer>
-
-    <script type="text/javascript" src="js/index.js"></script>
+        <!-- 产品介绍 -->
+        <div class="productIntro">
+            <div class="wrap">
+                <div class="cooperation-first productCotent">
+                    <p class="coop-title">产品介绍</p>
+                    <p class="coop-subtitle">Product Introduction</p>
+                    <p class="blankLine"></p>
+                </div>
+                <ul class="productList">
+                    <li>
+                        <div class="mask">
+                            <p class="details">查看详情</p>
+                        </div><img src="./images/产品.jpg" alt="">
+                        <p class="product-title">
+                            <火锅类牛肉系列>
+                        </p>
+                    </li>
+                    <li>
+                        <div class="mask">
+                            <p class="details">查看详情</p>
+                        </div><img src="./images/产品.jpg" alt="">
+                        <p class="product-title">
+                            <火锅类猪肉系列>
+                        </p>
+                    </li>
+                    <li>
+                        <div class="mask">
+                            <p class="details">查看详情</p>
+                        </div><img src="./images/产品.jpg" alt="">
+                        <p class="product-title">
+                            <串串系列>
+                        </p>
+                    </li>
+                    <li>
+                        <div class="mask">
+                            <p class="details">查看详情</p>
+                        </div><img src="./images/产品.jpg" alt="">
+                        <p class="product-title">
+                            <烧烤系列>
+                        </p>
+                    </li>
+                    <li>
+                        <div class="mask">
+                            <p class="details">查看详情</p>
+                        </div><img src="./images/产品.jpg" alt="">
+                        <p class="product-title">
+                            <冒菜系列>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 工艺介绍 -->
+        <div class="processIntro">
+            <div class="wrap">
+                <div class="processCotent process-left ">
+                    <div class="wrap-title">工艺介绍<span class="warp-subtitle">Process Introduction</span></div>
+                    <div class="process-step">
+                        <ul>
+                            <li>
+                                <div class="process-step-num">01</div>
+                                <div class="process-step-text">
+                                    <p>低温高湿微解冻技术：德国技术—细胞冰晶—逆冻返鲜技术</p>
+                                    <p>解冻效果均匀一致，无氧化与黑线现象。肌肉组织饱满光泽有弹性。返鲜度达到90%以上。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="process-step-num">02</div>
+                                <div class="process-step-text">
+                                    <p>锋刀微控薄切割技术：刀片锋度与速率同牛肉部位、解温程度、加工温度进行微机调整。</p>
+                                    <p>锋利且精度高，切面均匀光滑，几乎不产生肉屑，提高产品的成型率。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="process-step-num">03</div>
+                                <div class="process-step-text">
+                                    <p>真空滚揉微调理技术：模拟手工搓揉-重组质构</p>
+                                    <p>改善口感，杜绝微生物滋生，延长产品储存期。保证食品卫生品质。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="process-step-num">04</div>
+                                <div class="process-step-text">
+                                    <p>液氮速冻锁水保鲜技术：-70度液氮速冻定型保鲜</p>
+                                    <p>汁液流失率少，食品表面干耗小，从而保持了食品原有质地、口感、色泽、品相和营养价值</p>
+                                </div>
+                            </li>
+                        </ul>
+                        >>>>>>> 357bfbc958a3a7450d88645ea65028321dab5bf0
+                    </div>
+                </div>
+                <div div class="processCotent process-right"><img src="./images/工艺.jpg" alt=""></div>
+            </div>
+            <!-- 研发 -->
+            <div class="research">
+                <div class="wrap">
+                    <ul class="researchContent">
+                        <li>
+                            <div class="research-img">图片</div>
+                            <p class="research-title">研发</p>
+                            <div class="research-details">
+                                <p>·研发核心：原料+配方+工艺</p>
+                                <p>·以解决客户痛点为出发点，为客户设计方案。</p>
+                                <p>·以专业技术人才，定义实力派好食材（牛肉），帮助餐饮企业优化菜单及成本结构</p>
+                            </div>
+                            <img src="./images/研发.jpg" alt="">
+                        </li>
+                        <li>
+                            <div class="research-img">图片</div>
+                            <p class="research-title">类别</p>
+                            <div class="research-details">
+                                <p>·原切调理、微调理、深度调理、浅调味、深度调味五大调理体系</p>
+                                <p>·肉片 肉卷 肉排 肉串 肉丸五大产品系列</p>
+                                <p>·客户定制产品</p>
+                            </div>
+                            <img src="./images/研发.jpg" alt="">
+                        </li>
+                        <li>
+                            <div class="research-img">图片</div>
+                            <p class="research-title">智能工厂</p>
+                            <div class="research-details">
+                                <p>·最前沿加工技术建立数字研发体系和数字化工厂</p>
+                                <p>·以解决客户痛点为出发点，为客户设计方案。</p>
+                                <p>·智能制造：信息化+数字化+互联网，6大核心软件工具-OA ERP CRM EMS 数据中心 数据集成</p>
+                            </div>
+                            <img src="./images/研发.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 提交信息 -->
+            <div class="submitMes">
+                <div class="wrap">
+                    <div class="submitContent">
+                        <div class="submit-lable">姓名：<input type="text"></div>
+                        <div class="submit-lable">电话：<input type="text" class="submit-num"></div>
+                        <div class="submit-lable">留言内容：<input type="text" class="submit-message"><button>提交</button>
+                        </div>
+                    </div>
+                    <div class="cooperation-first productCotent">
+                        <p class="coop-title">客户案例</p>
+                        <p class="coop-subtitle">Customer Cases</p>
+                        <p class="blankLine"></p>
+                    </div>
+                    <div class="submitList">
+                        <ul>
+                            <li>
+                                <img src="./images/anli.png" alt="">
+                                <p class="submit-text">小龙坎老火锅</p>
+                            </li>
+                            <li>
+                                <img src="./images/anli.png" alt="">
+                                <p class="submit-text">蜀大侠</p>
+                            </li>
+                            <li>
+                                <img src="./images/anli.png" alt="">
+                                <p class="submit-text">玉林串串</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 客户案例 -->
+            <!-- <div class="customerCases">
+      <div class="wrap"></div>
+    </div> -->
+            <!-- 公司新闻 -->
+            <div class="companyNews">
+                <div class="wrap">
+                    <div class="companyContent">
+                        <div class="cooperation-first productCotent">
+                            <p class="coop-title">公司新闻</p>
+                            <p class="coop-subtitle">Company News</p>
+                            <p class="blankLine"></p>
+                        </div>
+                        <div class="companyDetails">
+                            <div class="companyDetails-left">
+                                <img src="./images/新闻背景 (2).png" alt="">
+                                <p class="details-title">用调理食材改变你的餐桌</p>
+                                <p class="details-text">调理食品在英语国家中叫做“Preparedfoods”，翻译成中文是</p>
+                                <p class="details-text">经过洗切或其他预处理，可直接进行烹饪的预制食品</p>
+                                <button class="details-button">查看更多></button>
+                            </div>
+                            <div class="companyDetails-right">
+                                <div class="companyList">
+                                    <div class="curren-content curren-left">
+                                        <p>04-09</p>
+                                        <p class="curren-content-eh">2022 YEAR</p>
+                                    </div>
+                                    <div class="curren-content curren-right">
+                                        <p class="details-title">用调理食材改变你的餐桌</p>
+                                        <p class="details-text">调理食品在英语国家中叫做“Preparedfoods”，翻译成中文是</p>
+                                        <p class="details-text">经过洗切或其他预处理，可直接进行烹饪的预制食品</p>
+                                    </div>
+                                </div>
+                                <div class="companyList">
+                                    <div class="curren-content curren-left">
+                                        <p>04-09</p>
+                                        <p class="curren-content-eh">2022 YEAR</p>
+                                    </div>
+                                    <div class="curren-content curren-right">
+                                        <p class="details-title">用调理食材改变你的餐桌</p>
+                                        <p class="details-text">调理食品在英语国家中叫做“Preparedfoods”，翻译成中文是</p>
+                                        <p class="details-text">经过洗切或其他预处理，可直接进行烹饪的预制食品</p>
+                                    </div>
+                                </div>
+                                <div class="companyList">
+                                    <div class="curren-content curren-left">
+                                        <p>04-09</p>
+                                        <p class="curren-content-eh">2022 YEAR</p>
+                                    </div>
+                                    <div class="curren-content curren-right">
+                                        <p class="details-title">用调理食材改变你的餐桌</p>
+                                        <p class="details-text">调理食品在英语国家中叫做“Preparedfoods”，翻译成中文是</p>
+                                        <p class="details-text">经过洗切或其他预处理，可直接进行烹饪的预制食品</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 底部 - common  -->
+            <footer>
+                <div class="wrap">
+                    <div class="footer-item-box">
+                        <div class="footer-item">
+                            <h3 class="title">产品展示</h3>
+                            <ul>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-item">
+                            <h3 class="title">产品展示</h3>
+                            <ul>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-item">
+                            <h3 class="title">产品展示</h3>
+                            <ul>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-item">
+                            <h3 class="title">产品展示</h3>
+                            <ul>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                                <li><a href="">火锅</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-code"></div>
+                </div>
+            </footer>
+            <script type="text/javascript" src="js/index.js"></script>
 </body>
 
 </html>
