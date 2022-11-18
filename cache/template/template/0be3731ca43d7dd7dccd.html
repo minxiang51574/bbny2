@@ -1,0 +1,26 @@
+<div class="list">
+<?php $pages=pagelist(); ?>
+<?php $pageinfo=pageinfo(); ?>
+<div class="pagination">
+  <?php if(isset($pageinfo['prev']['link'])){ ?>
+  <a class="prepage" href="<?php echo($pageinfo['prev']['link']); ?>" style="color: rgb(51, 51, 51);">上一页<span>←</span></a>
+  <?php }else{ ?>
+  <a class="prepage" style="color: rgb(51, 51, 51);">上一页<span>←</span></a>
+  <?php } ?>
+  <div class="jump-menus">
+    <select name="page_select" id="food_selection" onchange="location.href=this.value">
+      <?php foreach($pages as $page){ ?>
+      <option label="<?php echo($page['title']); ?>" value="<?php echo($page['link']); ?>"><a href="<?php echo($page['link']); ?>"><?php echo($page['title']); ?></a></option>
+      <?php } ?>
+    </select>/ <?php echo($pageinfo['page']); ?>
+  </div>
+  <?php if(isset($pageinfo['next']['link'])){ ?>
+  <a class="nextpage" style="color: rgb(153, 153, 153);"
+    href="<?php echo($pageinfo['next']['link']); ?>">下一页<span>→</span></a>
+  <?php }else{ ?>
+  <a class="nextpage" style="color: rgb(153, 153, 153);">下一页<span>→</span></a>
+
+  <?php } ?>
+</div>
+
+</div>

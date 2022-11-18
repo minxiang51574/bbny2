@@ -1,0 +1,77 @@
+<?php if(!defined('ClassCms')) {exit();}?>
+<!DOCTYPE html>
+<html>
+<head><?php echo(C('this:head','应用管理')); ?><?php echo(C('cms:head:~','admin')); ?></head>
+<body>
+  <div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-card">
+
+            <div class="layui-card-header">
+                <div class="layui-row">
+                    <?php
+                        $breadcrumb=array(
+                            array('url'=>'','title'=>'应用管理')
+                        );
+                    ?>
+                    <div id="cms-breadcrumb"><?php echo(C('this:breadcrumb',$breadcrumb)); ?></div>
+                    <div id="cms-right-top-button"></div>
+                </div>
+            </div>
+          <div class="layui-card-body layui-form">
+            <?php if($newclass){ ?>
+            <blockquote class="layui-elem-quote layui-text">
+                新增应用:<?php echo($newclass); ?>
+            </blockquote>
+            <?php } ?>
+            <table class="layui-table" lay-skin="line" >
+            <colgroup>
+              <col>
+              <col>
+              <col>
+              <col>
+              <col>
+            </colgroup>
+            <thead>
+              <tr>
+                <th>应用名</th>
+                <th class="layui-hide-xss">标识</th>
+                <th class="layui-show-md-td">版本</th>
+                <th></th>
+              </tr> 
+            </thead>
+            <tbody>
+                <?php foreach($classlist as $class){ ?>
+                    <tr rel="<?php echo($class['hash']); ?>">
+                    <td>
+                        <i class="layui-icon <?php echo($class['ico']); ?><?php if($class['enabled']==1){ ?> cmscolor<?php } ?>"></i>
+                        <?php if(P('class:config')){ ?>
+                        <a href="?do=admin:class:config&hash=<?php echo($class['hash']); ?>"><span<?php if(!$class['enabled']){ ?> class="cms-text-disabled"<?php } ?>><?php echo($class['classname']); ?></span></a>
+                        <?php }else{ ?>
+                        <span<?php if(!$class['enabled']){ ?> class="cms-text-disabled"<?php } ?>><?php echo($class['classname']); ?></span>
+                        <?php } ?>
+                        <?php if($class['classorder']>999999){ ?> <i class="layui-icon layui-icon-rate" title="置顶应用"></i><?php } ?>
+                    </td>
+                    <td class="layui-hide-xss"><?php echo($class['hash']); ?></td>
+                    <td class="layui-show-md-td"><?php echo($class['classversion']); ?></td>
+                    <td class="btn">
+                        <a rel="<?php if(!empty($class['adminpage'])){ ?>?do=<?php echo($class['hash']); ?>:<?php echo($class['adminpage']); ?><?php } ?>" <?php if(!empty($class['adminpage']) && $class['enabled']){ ?>href="?do=<?php echo($class['hash']); ?>:<?php echo($class['adminpage']); ?>"<?php } ?> class="layui-btn layui-btn-sm layui-btn-primary<?php if(empty($class['adminpage']) || !$class['enabled']){ ?> layui-btn-disabled<?php } ?>">主页</a>
+                        <?php if(P('class:config')){ ?><a class="layui-btn layui-btn-sm layui-btn-primary" href="?do=admin:class:config&hash=<?php echo($class['hash']); ?>" rel="<?php echo($class['hash']); ?>">管理</a><?php } ?>
+                    </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+          </table>
+
+<div class="layui-row">
+    <div id="cms-left-bottom-button" class="layui-btn-container"></div>
+    <div id="cms-right-bottom-button" class="layui-btn-container">
+    </div>
+</div>
+          </div>
+        </div>
+    </div>
+  </div>
+<?php echo(C('this:body:~')); ?>
+<?php echo(C('cms:body:~','admin')); ?></body>
+</html>

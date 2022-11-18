@@ -1,0 +1,425 @@
+<!--
+ * @Author: Mx
+ * @Date: 2022-11-14 21:42:11
+ * @Description: 网站首页
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\a08c98e916a491230dcd.html'); ?>
+
+<body>
+
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\9762d0f87b1e445d7140.html'); ?>
+
+    <!-- 轮播 -->
+    <div class="bannerList">
+        <div class="slideBox">
+            <div class="bd">
+                <ul style="width: 100%;">
+                    <?php $pics=array_filter(explode(';',$GLOBALS['channel'][66618101]['banner'])); ?>
+                    <?php foreach($pics as $pic){ ?>
+                    <li style="width: 100%;">
+                        <a href="#"><img src="<?php echo($pic); ?>" /></a>
+                    </li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <div class="hd">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+    <!-- 轮播< 992 -->
+    <div class="lib87467138_4wap1">
+        <div class="banner">
+            <?php $pics=array_filter(explode(';',$GLOBALS['channel'][66618101]['banner'])); ?>
+            <?php foreach($pics as $pic){ ?>
+            <div class="bannerImg" style=" background: url(<?php echo($pic); ?>) no-repeat; background-size: cover;  ">
+                <a href="#"></a>
+            </div>
+            <?php } ?>
+
+        </div>
+    </div>
+    <!-- 新闻快讯-->
+    <div class="newsFlash">
+        <div class="wrap">
+            <div class="newsFlash-logo">
+                <div class="title">新闻快讯</div>
+                <div class="sub-title">News Flash</div>
+            </div>
+
+            <div style="display:flex">
+                <?php $test['cid']='66618111'; ?>
+                <?php $test['where']['recommend']='1'; ?>
+                <?php $test['all']='1'; ?>
+                <?php $test['pagesize']='2'; ?>
+                <?php $articles=a($test); ?>
+                <?php foreach($articles as $article){ ?>
+                <div class="newsFlash-item-time">
+                    <div class="newsFlash-time-top"><?php echo(date('d',$article['datetime'])); ?></div>
+                    <div class="newsFlash-time-bottom"><?php echo(date('Y-m',$article['datetime'])); ?></div>
+                </div>
+                <div class="newsFlash-item-context">
+                    <div class="newsFlash-context-top"> <?php echo(text($article['title'],'15','...')); ?></div>
+                    <div class="newsFlash-context-bottom">
+                        <?php echo(text($article['description'],'36','...')); ?>
+                    </div>
+                </div>
+                <?php } ?>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- 合作伙伴 -->
+    <div class="cooperativePartner">
+        <div class="wrap">
+            <div class="cooperationContent">
+                <ul>
+                    <li class="cooperation-first">
+                        <p class="coop-title">合作伙伴</p>
+                        <p class="coop-subtitle">cooperative partner</p>
+                        <p class="coop-content">行业期许 我们的最大动力</p>
+                        <p class="blankLine"></p>
+                    </li>
+                    <?php $testp['cid']='66618122'; ?>
+                    <?php $testp['all']='1'; ?>
+                    <?php $testp['pagesize']='8'; ?>
+                    <?php $articles=a($testp); ?>
+                    <?php foreach($articles as $article){ ?>
+                    <li><img src="<?php echo($article['pic']); ?>" alt=""></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 合作伙伴2 -->
+    <!-- <div class="cooperativePartnerWap">
+        <p class="title">合作伙伴</p>
+        <p class="coop-content">行业期许 我们的最大动力</p>
+        <ul>
+            <?php $testp['cid']='66618122'; ?>
+            <?php $testp['all']='1'; ?>
+            <?php $testp['pagesize']='8'; ?>
+            <?php $articles=a($testp); ?>
+            <?php foreach($articles as $article){ ?>
+            <li><img src="<?php echo($article['pic']); ?>" alt=""></li>
+            <?php } ?>
+        </ul>
+    </div> -->
+    <!-- 关于我们  -->
+    <div class="aboutUs">
+        <div class="wrap">
+            <div class="about-content">
+                <div class="wrap-title">关于我们<span class="warp-subtitle">ABOUT US</span></div>
+                <p class="wrap-introduce">
+                    <?php echo(text($GLOBALS['channel'][66618116]['description'],'356','...')); ?>
+                </p>
+
+                <button class="wrap-more">查看更多 ></button>
+            </div>
+            <div class="videoBox">
+                <!-- <video width="320" height="240" controls>
+                    <source src="<?php echo($GLOBALS['channel'][66618116]['video']); ?>" type="video/mp4">
+
+                    <source src="<?php echo($GLOBALS['channel'][66618116]['video']); ?>" type="video/ogg">
+
+                    <source src="<?php echo($GLOBALS['channel'][66618116]['video']); ?>" type="video/webm">
+
+                    您的浏览器不支持 video 标签。
+
+                </video> -->
+                <!-- <i class="iconfont icon-yunhang videopaly"></i> -->
+                <!-- <video src="<?php echo($GLOBALS['channel'][66618116]['video']); ?>"></video> -->
+            </div>
+        </div>
+    </div>
+    <!-- 关于我们2  -->
+    <div class="aboutUsWap">
+        <div class="about-content">
+            <div class="wrap-title">关于我们</div>
+            <p class="wrap-introduce">
+                <?php echo(text($GLOBALS['channel'][66618116]['description'],'356','...')); ?>
+            </p>
+
+            <button class="wrap-more">查看更多 ></button>
+        </div>
+    </div>
+    <!-- 产品介绍 -->
+    <div class="productIntro">
+        <div class="wrap">
+            <div class="cooperation-first productCotent">
+                <p class="coop-title">产品介绍</p>
+                <p class="coop-subtitle">Product Introduction</p>
+                <p class="blankLine"></p>
+            </div>
+            <ul class="productList">
+                <?php $product['cid']='66618107'; ?>
+                <?php $product['all']='1'; ?>
+                <?php $product['where']['recommend']='1'; ?>
+                <?php $product['pagesize']='20'; ?>
+                <?php $articles=a($product); ?>
+                <?php foreach($articles as $article){ ?>
+                <li>
+                    <div class="mask">
+                        <p class="details">查看详情</p>
+                    </div><img src="<?php echo($article['pic']); ?>" alt="">
+                    <p class="product-title">
+                        < <?php echo(text($article['title'],'8')); ?>>
+                    </p>
+                </li>
+                <?php } ?>
+
+            </ul>
+        </div>
+    </div>
+    <!-- 产品介绍2 -->
+    <div class="productIntroWap">
+        <div class="cooperation-first productCotent">
+            <p class="coop-title">产品介绍</p>
+            <p class="coop-subtitle">Product Introduction</p>
+            <p class="blankLine"></p>
+        </div>
+        <div class="productListWap">
+            <ul>
+                <?php $product['cid']='66618107'; ?>
+                <?php $product['all']='1'; ?>
+                <?php $product['where']['recommend']='1'; ?>
+                <?php $product['pagesize']='20'; ?>
+                <?php $articles=a($product); ?>
+                <?php foreach($articles as $article){ ?>
+                <li class="clearfix">
+                    <img src="<?php echo($article['pic']); ?>" alt="">
+                    <p class="product-title">
+                        < <?php echo(text($article['title'],'8')); ?>>
+                    </p>
+                </li>
+                <?php } ?>
+
+            </ul>
+        </div>
+    </div>
+    <!-- 工艺介绍 -->
+    <div class="processIntro">
+        <div class="wrap">
+            <div class="processCotent process-left ">
+                <div class="wrap-title">工艺介绍<span class="warp-subtitle">Process Introduction</span></div>
+                <div class="process-step">
+                    <ul>
+                        <?php $process['cid']='66618123'; ?>
+                        <?php $process['all']='1'; ?>
+                        <?php $process['order']='sort asc'; ?>
+                        <?php $process['pagesize']='5'; ?>
+                        <?php $processdata=a($process); ?>
+                        <?php foreach($processdata as $article){ ?>
+                        <li style="display:flex;">
+                            <div class="process-step-num">0<?php echo($article['key']); ?></div>
+                            <div class="process-step-text">
+                                <p><?php echo($article['title']); ?></p>
+                                <p><?php echo($article['description']); ?></p>
+                            </div>
+                        </li>
+                        <?php } ?>
+
+                    </ul>
+                </div>
+            </div>
+            <?php $parenta=C('cms:channel:get','66618123'); ?>
+            <div div class="processCotent process-right"><img src="<?php echo($parenta['pic']); ?>" alt=""></div>
+        </div>
+    </div>
+    <!-- 研发 -->
+    <div class="research">
+        <div class="wrap">
+            <ul class="researchContent">
+                <?php $robot['cid']='66618124'; ?>
+                <?php $robot['all']='1'; ?>
+                <?php $robot['pagesize']='3'; ?>
+                <?php $robotdata=a($robot); ?>
+                <?php foreach($robotdata as $article){ ?>
+                <li>
+                    <div class="research-img">
+                        <img width="100%" height="100%" src="<?php echo($article['icon']); ?>" alt="">
+                    </div>
+                    <p class="research-title"><?php echo($article['title']); ?></p>
+                    <div class="research-details">
+                        <p><?php echo($article['content']); ?></p>
+                    </div>
+                    <img src="<?php echo($article['pic']); ?>" alt="">
+                </li>
+                <?php } ?>
+
+            </ul>
+        </div>
+    </div>
+    <!-- 提交信息 客户案例 -->
+    <div class="submitMes">
+        <div class="wrap">
+            <div class="submitContent">
+                <div class="submit-lable">姓名：<input type="text"></div>
+                <div class="submit-lable">电话：<input type="text" class="submit-num"></div>
+                <div class="submit-lable">留言内容：<input type="text" class="submit-message"><button>提交</button>
+                </div>
+            </div>
+            <div class="cooperation-first productCotent">
+                <p class="coop-title">客户案例</p>
+                <p class="coop-subtitle">Customer Cases</p>
+                <p class="blankLine"></p>
+            </div>
+            <div class="submitList">
+                <ul>
+                    <?php $kuhu['cid']='66618110'; ?>
+                    <?php $kuhu['all']='1'; ?>
+                    <?php $kuhu['where']['recommend']='1'; ?>
+                    <?php $kuhu['pagesize']='20'; ?>
+                    <?php $articles=a($kuhu); ?>
+                    <?php foreach($articles as $article){ ?>
+                    <li>
+                        <img width="100%" src="<?php echo($article['pic']); ?>" alt="">
+                        <p class="submit-text"><?php echo($article['title']); ?></p>
+                    </li>
+                    <?php } ?>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="submitMesWap">
+        <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\fe409fbb03011441b944.html'); ?>
+    </div>
+
+    <!-- 公司新闻 -->
+    <div class="companyNews">
+        <div class="wrap">
+            <div class="companyContent">
+                <div class="cooperation-first productCotent">
+                    <p class="coop-title">公司新闻</p>
+                    <p class="coop-subtitle">Company News</p>
+                    <p class="blankLine"></p>
+                </div>
+                <div class="companyDetails">
+                    <?php $news['cid']='66618111'; ?>
+                    <?php $news['all']='1'; ?>
+                    <?php $news['start']='0'; ?>
+                    <?php $news['where']['recommend']='1'; ?>
+                    <?php $news['pagesize']='1'; ?>
+                    <?php $articles=a($news); ?>
+                    <?php foreach($articles as $article){ ?>
+                    <div class="companyDetails-left">
+                        <img src="<?php echo($article['pic']); ?>" alt="">
+                        <p class="details-title"><?php echo($article['content']); ?></p>
+
+                        <button class="details-button"><a href="<?php echo($article['link']); ?>">查看更多></a></button>
+                    </div>
+                    <?php } ?>
+                    <div class="companyDetails-right">
+                        <?php $news['cid']='66618111'; ?>
+                        <?php $news['all']='1'; ?>
+                        <?php $news['start']='1'; ?>
+                        <?php $news['where']['recommend']='1'; ?>
+                        <?php $news['pagesize']='3'; ?>
+                        <?php $articles=a($news); ?>
+                        <?php foreach($articles as $article){ ?>
+                        <div class="companyList">
+                            <div class="curren-content curren-left">
+                                <p><?php echo(date('m-d',$article['datetime'])); ?></p>
+                                <p class="curren-content-eh"><?php echo(date('Y',$article['datetime'])); ?></p>
+                            </div>
+                            <div class="curren-content curren-right">
+                                <p class="details-title"><?php echo(text($article['title'],'20')); ?></p>
+                                <p class="details-text"><?php echo($article['description']); ?></p>
+                            </div>
+                        </div>
+                        <?php } ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="companyNewsWap lib46083756_11wap1">
+        <div class="sys_tit1 sysWapTitle">
+            <h2>公司新闻</h2>
+            <p>news</p>
+        </div>
+        <div class="nav">
+            <ul></ul>
+        </div>
+        <div class="list">
+            <div class="slidebox">
+                <ul>
+                    <?php $news['cid']='66618111'; ?>
+                    <?php $news['all']='1'; ?>
+                    <?php $news['start']='0'; ?>
+                    <?php $news['where']['recommend']='1'; ?>
+                    <?php $news['pagesize']='1'; ?>
+                    <?php $articles=a($news); ?>
+                    <?php foreach($articles as $article){ ?>
+                    <li style="min-height:150px">
+                        <a href="/newsInfo?art_id=340672&amp;menu=71B0C8B3-44DA-E1F7-2610-70CDD3C0EBB6">
+                            <div class="pic" style="
+                                    background: url(<?php echo($article['pic']); ?>) no-repeat center;
+                                    background-size: cover;">
+                                <img src="<?php echo($article['pic']); ?>" alt="">
+                            </div>
+                            <div class="textcon">
+                                <p class="maintitle">
+                                    <?php echo($article['content']); ?>
+                                </p>
+                                <!-- <p class="subtitle">
+                                      
+                                        </p> -->
+                                <!-- <p class="time">
+                                        <span class="date"> 25 </span><span class="month"> 2021-10 </span>
+                                    </p> -->
+                            </div>
+                        </a>
+                    </li>
+                    <?php } ?>
+
+                    <?php $news['cid']='66618111'; ?>
+                    <?php $news['all']='1'; ?>
+                    <?php $news['start']='1'; ?>
+                    <?php $news['where']['recommend']='1'; ?>
+                    <?php $news['pagesize']='3'; ?>
+                    <?php $articles=a($news); ?>
+                    <?php foreach($articles as $article){ ?>
+                    <li>
+                        <a href="/newsInfo?art_id=340671&amp;menu=CB87B73E-E97D-0C02-B6E2-D9022303B8B8">
+                            <div class="pic" style="
+                    background: url(img/space.png) no-repeat center;
+                    background-size: cover;
+                  " data-url="//cdn.ilhjy.cn/514612381_shop_ilhjy_cn/public_html/runtime/uploads/8b0fc786929d2f54e7f2d4f36ee9882e.png">
+                            </div>
+                            <div class="textcon">
+                                <p class="maintitle">
+                                    <?php echo(text($article['title'],'20')); ?>
+                                </p>
+                                <p class="subtitle">
+                                    <?php echo($article['description']); ?>
+                                </p>
+                                <p class="time">
+                                    <span class="date"> <?php echo(date('m-d',$article['datetime'])); ?></span>
+                                    <span class="month"> <?php echo(date('Y',$article['datetime'])); ?></span>
+
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+        <div class="more">
+            <a class="partner-more" href="/news?menu_id=79899">read more</a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- 底部 - common  -->
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\2f32bcdf3594456f7e16.html'); ?>
+<?php echo(C('cms:body:~','template')); ?></body>
+
+</html>

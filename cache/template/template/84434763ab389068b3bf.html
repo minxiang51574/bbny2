@@ -1,0 +1,11 @@
+ <!-- 您的位置 - common -->
+ <div class="common-position">
+        <div class="crumbs">
+            <div class="wrap">
+                <em>您的位置：</em>
+                <?php foreach(bread() as $bread){ ?>
+                <a href="<?php echo($bread['link']); ?>"><?php echo($bread['channelname']); ?></a>
+               <?php } ?>
+            </div>
+        </div>
+    </div>

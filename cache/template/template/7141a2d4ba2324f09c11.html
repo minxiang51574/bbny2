@@ -1,0 +1,65 @@
+<div
+  class="lib40917467_3"
+>
+  <div class="t-nav">
+    <div class="menu">
+      <a class="logo" href="/"><img src="<?php echo($GLOBALS['channel'][66618101]['logo_img']); ?>" alt="img"></a>
+      <ul>
+
+      
+      <?php foreach(nav() as $nav){ ?>
+
+        <li class="<?php if($nav['active']){ ?> active<?php } ?>">
+          <a  href="<?php echo($nav['link']); ?>"><?php echo($nav['channelname']); ?></a>
+          <?php $navs2=nav($nav['id']); ?>
+                <?php if(count($navs2)){ ?>
+          <div class="erjp ">
+          <?php foreach($navs2 as $nav2){ ?>
+                    <a href="<?php echo($nav2['link']); ?>"><?php echo($nav2['channelname']); ?></a>
+                    <?php } ?>
+          </div>
+          <?php } ?>
+
+        </li>
+        <?php } ?>
+      </ul>
+    </div>
+    <div class="erjsv"></div>
+  </div>
+</div>
+<!-- 响应式处理 -->
+<div class="lib40917467_3wap1 lib40917467_3wap1header">
+    <div class="wrap">
+        <div class="logo"><a href=""></a></div>
+        <span class="nav_toggle"><em></em></span><span class="icon_toggle"><em></em></span>
+    </div>
+    <div class="nav">
+        <div class="wrap_nav">
+            <ul>
+            <ul>
+            <?php foreach(nav() as $nav){ ?>
+            <li class="clearfix">
+                    <a href="<?php echo($nav['link']); ?>"><?php echo($nav['channelname']); ?></a>
+                <?php if(count($navs2)){ ?>
+                    <div class="subnav">
+                    <?php foreach($navs2 as $nav2){ ?>
+                    <a href="<?php echo($nav2['link']); ?>"><?php echo($nav2['channelname']); ?></a>
+                    <?php } ?>
+                    </div>
+                    <span class="nav_add"></span>
+                <?php } ?>
+                </li>
+            </li>
+            <?php } ?>
+            </ul>
+            </ul>
+        </div>
+    </div>
+    <div class="searchbar">
+        <div class="search">
+            <input type="text" name="search_key" placeholder="输入关键字" id="sear_text" /><input type="button" value=""
+                class="bmit" id="search_btn" /><span class="icon"><em></em></span>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>

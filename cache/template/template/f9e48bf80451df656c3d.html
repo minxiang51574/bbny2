@@ -1,0 +1,85 @@
+<!--
+ * @Author: Mx
+ * @Date: 2022-11-14 21:42:11
+ * @Description: 产品介绍 九味牛tab
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\a08c98e916a491230dcd.html'); ?>
+
+<body>
+
+
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\b1ac5765564f0e07bb65.html'); ?>
+    <!-- banner - common-->
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\95d21d4faf0b4c7a897f.html'); ?>
+    <!-- 热门关键词 - common -->
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\30a381d90ebeae2b2a02.html'); ?>
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\1cf634bc33d00c861d85.html'); ?>
+
+    <!-- 内页方案 -->
+    <div class="lib11380064_4 ">
+        <div class="main">
+            <div class="news_con">
+                <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\abe3fc783b0642b107b4.html'); ?>
+                <div class="news_main">
+                    <div class="lib11380064_4news_info_detail">
+                        <!--文章详情-->
+                        <div class="content">
+                            <div class="news_tit">
+                                <h3 class="news_hot" data-id="79894" data-artid="292562"><?php echo($GLOBALS['C']['channel']['title']); ?></h3>
+
+                            </div>
+                            <div class="news_pro">
+                                <div class="news_pcon aboutP">
+                                    <?php echo($GLOBALS['C']['channel']['content']); ?>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+                            <div class="news_hotnews_hot" data-lib="page/news_info1/news_hot">
+                                <div class="news_list">
+                                    <div class="title"><span>热门资讯</span><i> / hotnews</i></div>
+                                    <ul>
+                                        <?php $test['cid']='66618111'; ?>
+                                        <?php $test['where']['recommend']='1'; ?>
+                                        <?php $test['all']='1'; ?>
+                                        <?php $test['pagesize']='6'; ?>
+                                        <?php $articles=a($test); ?>
+                                        <?php foreach($articles as $article){ ?>
+                                        <li>
+                                            <a href="<?php echo($article['link']); ?>" class="dt_tit"><?php echo($article['title']); ?>
+                                            </a>
+                                            <a href="<?php echo($article['link']); ?>" class="dt_more">查看详情 &gt;
+                                            </a>
+                                        </li>
+                                        <?php } ?>
+                                    </ul>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--文章详情-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lib01530112_4wap1 lib01530112_4wap">
+        <div class="news_pro">
+            <div class="news_pro">
+                <div class="news_pcon">
+                    <?php echo($GLOBALS['C']['channel']['content']); ?>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\2f32bcdf3594456f7e16.html'); ?>
+
+<?php echo(C('cms:body:~','template')); ?></body>
+
+</html>

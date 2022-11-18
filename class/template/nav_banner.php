@@ -1,0 +1,1 @@
+<img width="100%" src="{$.0.nav_pic}" alt="">

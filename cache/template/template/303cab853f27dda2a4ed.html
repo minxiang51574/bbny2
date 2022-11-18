@@ -1,0 +1,37 @@
+<?php if (!defined('ClassCms')) {
+    /*
+     * @Author: Mx
+     * @Date: 2022-11-18 14:12:11
+     * @Description: 
+     */
+
+    exit();
+} ?>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no" />
+    <title><?php if(isset($GLOBALS['C']['channel']['title']) && !empty($GLOBALS['C']['channel']['title'])){ ?><?php echo($GLOBALS['C']['channel']['title']); ?><?php }else{ ?><?php echo($GLOBALS['C']['channel']['channelname']); ?><?php } ?></title>
+    <?php if(isset($GLOBALS['C']['channel']['keywords'])){ ?>
+    <meta name="keywords" content="<?php echo($GLOBALS['C']['channel']['keywords']); ?>"><?php echo('
+'); ?><?php } ?>
+    <?php if(isset($GLOBALS['C']['channel']['description'])){ ?>
+    <meta name="description" content="<?php echo($GLOBALS['C']['channel']['description']); ?>"><?php echo('
+'); ?><?php } ?>
+
+    <script src="<?php echo('/class/template/'); ?>js/jquery.min.js" type="text/javascript"></script>
+    <script src="<?php echo('/class/template/'); ?>js/jquery.scrollLoading.js" type="text/javascript"></script>
+    <script src="<?php echo('/class/template/'); ?>js/slick.min.js"></script>
+    <script src="<?php echo('/class/template/'); ?>js/aos.js"></script>
+    <link type="text/css" rel="stylesheet" href="<?php echo('/class/template/'); ?>css/nav.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo('/class/template/'); ?>css/style.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo('/class/template/'); ?>iconfont/iconfont.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo('/class/template/'); ?>css/serviceInfo.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo('/class/template/'); ?>css/product.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo('/class/template/'); ?>css/news.css">
+
+    <script src="<?php echo('/class/template/'); ?>js/index.js"></script>
+
+
+<?php echo(C('cms:head:~','template')); ?></head>

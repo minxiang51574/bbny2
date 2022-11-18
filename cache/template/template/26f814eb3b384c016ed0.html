@@ -1,0 +1,82 @@
+<html>
+<?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\a08c98e916a491230dcd.html'); ?>
+
+<body>
+
+  <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\b1ac5765564f0e07bb65.html'); ?>
+  <!-- banner - common-->
+  <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\95d21d4faf0b4c7a897f.html'); ?>
+
+
+  <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\30a381d90ebeae2b2a02.html'); ?>
+  <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\1cf634bc33d00c861d85.html'); ?>
+
+  <!-- 产品列表 -->
+  <div class="productBox">
+    <div class="main">
+      <div class="container ">
+        <div class="row">
+          <div class="col-12">
+            <div class="product-list">
+              <div class="classify clearfix">
+                <ul>
+                  <?php $test['all']='1'; ?>
+                  <?php $test['page']='page'; ?><?php  ?>
+                  <?php $test['pagesize']='12'; ?><?php  ?>
+                  <?php $articles=a($test); ?>
+                  <?php foreach($articles as $article){ ?>
+                  <li>
+                    <a href="<?php echo($article['link']); ?>">
+                      <div class="image">
+                        <img width="360" height="205" class="img" src="<?php echo($article['pic']); ?>" alt="">
+                      </div>
+                      <div class="text">
+                        <div class="textCon">
+                          <p><?php echo(date('Y-m-d',$article['datetime'])); ?></p>
+                          <h3><?php echo($article['title']); ?></h3>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <?php } ?>
+
+                </ul>
+              </div>
+              <?php $pages=pagelist(); ?>
+              <?php $pageinfo=pageinfo(); ?>
+              <div class="pagination">
+                <?php if(isset($pageinfo['prev']['link'])){ ?>
+                <a class="prepage" href="<?php echo($pageinfo['prev']['link']); ?>" style="color: rgb(51, 51, 51);">上一页<span>←</span></a>
+                <?php }else{ ?>
+                <a class="prepage" style="color: rgb(51, 51, 51);">上一页<span>←</span></a>
+                <?php } ?>
+                <div class="jump-menus">
+                  <select name="page_select" id="food_selection" onchange="location.href=this.value">
+                    <?php foreach($pages as $page){ ?>
+                    <option label="<?php echo($page['title']); ?>" value="<?php echo($page['link']); ?>"><a href="<?php echo($page['link']); ?>"><?php echo($page['title']); ?></a></option>
+                    <?php } ?>
+                  </select>/ <?php echo($pageinfo['page']); ?>
+                </div>
+                <?php if(isset($pageinfo['next']['link'])){ ?>
+                <a class="nextpage" style="color: rgb(153, 153, 153);"
+                  href="<?php echo($pageinfo['next']['link']); ?>">下一页<span>→</span></a>
+                <?php }else{ ?>
+                <a class="nextpage" style="color: rgb(153, 153, 153);">下一页<span>→</span></a>
+
+                <?php } ?>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- 底部 - common  -->
+  <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\2f32bcdf3594456f7e16.html'); ?>
+
+<?php echo(C('cms:body:~','template')); ?></body>
+
+</html>

@@ -1,0 +1,111 @@
+<!--
+ * @Author: Mx
+ * @Date: 2022-11-14 21:42:11
+ * @Description: 企业动态 新闻资讯
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\a08c98e916a491230dcd.html'); ?>
+
+<body>
+
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\b1ac5765564f0e07bb65.html'); ?>
+    <!-- banner - common-->
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\95d21d4faf0b4c7a897f.html'); ?>
+    <!-- 热门关键词 - common -->
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\30a381d90ebeae2b2a02.html'); ?>
+
+    <!-- 您的位置 - common -->
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\1cf634bc33d00c861d85.html'); ?>
+    <!-- 内页方案 -->
+    <div class="lib62156920_3">
+        <div class="nav">
+            <div class="lib62156920_3category">
+                <div class="categoryBg">
+                    <div class="cate"><span data-id="79899"></span>
+                        <ul>
+                            <?php foreach(nav(66618111,999) as $nav){ ?>
+                            <li class="clearfix">
+                                <a class="<?php if($nav['active']){ ?>active <?php } ?>" href="<?php echo($nav['link']); ?>"><?php echo($nav['channelname']); ?></a>
+                            </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="container clearfix">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="lib62156920_3list2">
+                            <div class="classify2 clearfix" data-pcount="11" data-total="62">
+                                <ul>
+                                    <?php $test['all']='1'; ?>
+                                    <?php $test['page']='page'; ?><?php  ?>
+                                    <?php $test['pagesize']='12'; ?><?php  ?>
+                                    <?php $articles=a($test); ?>
+                                    <?php foreach($articles as $article){ ?>
+                                    <li>
+                                        <a href="<?php echo($article['link']); ?>">
+                                            <div class="image">
+                                                <div class="img" style="background-image: url(<?php echo($article['pic']); ?>);">
+                                                </div>
+                                            </div>
+                                            <div class="text">
+                                                <div class="textCon">
+                                                    <h3><?php echo($article['title']); ?></h3>
+                                                    <p>
+                                                        <?php echo($article['content']); ?>
+                                                    </p>
+                                                </div>
+                                                <div class="moreBox clearfix"><span class="time">
+                                                        <?php echo(date('Y-m-d',$article['datetime'])); ?>
+                                                    </span><span class="column"></span><span class="more">Read More
+                                                        &gt;</span></div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <?php } ?>
+
+                                </ul>
+                            </div>
+                            <?php $pages=pagelist(); ?>
+                            <?php $pageinfo=pageinfo(); ?>
+                            <div class="pagination">
+                                <?php if(isset($pageinfo['prev']['link'])){ ?>
+                                <a class="prepage" href="<?php echo($pageinfo['prev']['link']); ?>"
+                                    style="color: rgb(51, 51, 51);">上一页<span>←</span></a>
+                                <?php }else{ ?>
+                                <a class="prepage" style="color: rgb(51, 51, 51);">上一页<span>←</span></a>
+                                <?php } ?>
+                                <div class="jump-menus">
+                                    <select name="page_select" id="food_selection" onchange="location.href=this.value">
+                                        <?php foreach($pages as $page){ ?>
+                                        <option label="<?php echo($page['title']); ?>" value="<?php echo($page['link']); ?>"><a
+                                                href="<?php echo($page['link']); ?>"><?php echo($page['title']); ?></a></option>
+                                        <?php } ?>
+                                    </select>/ <?php echo($pageinfo['page']); ?>
+                                </div>
+                                <?php if(isset($pageinfo['next']['link'])){ ?>
+                                <a class="nextpage" style="color: rgb(153, 153, 153);"
+                                    href="<?php echo($pageinfo['next']['link']); ?>">下一页<span>→</span></a>
+                                <?php }else{ ?>
+                                <a class="nextpage" style="color: rgb(153, 153, 153);">下一页<span>→</span></a>
+
+                                <?php } ?>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 - common  -->
+    <?php include('D:\phpStudy\phpstudy_pro\WWW\bn\cache\template\template\2f32bcdf3594456f7e16.html'); ?>
+<?php echo(C('cms:body:~','template')); ?></body>
+
+</html>

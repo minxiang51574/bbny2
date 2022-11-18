@@ -1,0 +1,25 @@
+<!-- 热门关键词 - common -->
+<div class="content hotKeyword-text-box">
+    <div class="content-wrap">
+        <div class="wrap">
+            <div class="hotKeyword-text">
+                <h5>热门关键词:</h5>
+                <ul>
+                    <div class="tagcloud">
+
+                        <?php $articlelist['modulehash']='tags'; ?>
+                        <?php $articles=a($articlelist); ?>
+                        <?php foreach($articles as $article){ ?>
+                        <li><a href="/search?keyWord=<?php echo($article['title']); ?>"><?php echo($article['title']); ?></a></li>
+                        <?php } ?>
+
+
+                </ul>
+                <div class="phone cell"> <?php echo($GLOBALS['channel'][66618101]['phone']); ?> </div>
+            </div>
+            <form class="hotKeyword-input" action="search" method="get"><input class="" name="search_key"
+                    placeholder="请输入关键字" type="text"><input class="basec searchBtn" type="submit" value=""><input
+                    type="hidden" name="__hash__" value="5c124329ece52e40700fdba75550d4df"></form>
+        </div>
+    </div>
+</div>

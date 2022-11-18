@@ -1,0 +1,71 @@
+<html>
+
+<?php include('D:\ayden\study\baidu\bbny2\cache\template\template\303cab853f27dda2a4ed.html'); ?>
+
+<body>
+
+  <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\e99111b00921f2b724e2.html'); ?>
+
+
+  <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\35fb0f1ebc0d8f45d936.html'); ?>
+
+
+
+  <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\0d8670b0007c666332ca.html'); ?>
+  <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\84434763ab389068b3bf.html'); ?>
+
+                <?php $articlelist['modulehash']='product'; ?><?php  ?>
+                <?php $articlelist['page']='page'; ?><?php  ?>
+                <?php $articlelist['pagesize']='1'; ?><?php  ?>
+                <?php
+                //只搜索标题:
+                $articlelist['where']['title%']=htmlspecialchars($_GET['search_key']);
+                // print_r($articlelist)
+                ?>
+                <?php $articles=a($articlelist); ?>
+
+  <div class="serachBox">
+    <div class="main">
+      <div class="search_con">
+        <div class="search_list">
+          <div class="result">相关搜索结果：共计<?php echo(count($articles)); ?>个</div>
+          <?php if(count($articles)){ ?>
+
+          <div class="search news_both" data-pcount="1" data-total="76">
+            <ul class="ulist">
+             <?php foreach($articles as $article){ ?>
+              <li><a href="<?php echo($article['link']); ?>">
+                  <div class="pic"><i style="background:url(<?php echo($article['pic']); ?>) no-repeat center; background-size: cover;"></i>
+                  </div>
+                  <div class="dt_con">
+                    <h5><?php echo($article['title']); ?></h5>
+                    <p class="dt_p">
+                    <?php echo($article['description']); ?>
+                    </p>
+                    <em>
+                      <i class="date"><?php echo(date('Y-m-d',$article['datetime'])); ?></i>
+                    </em>
+                  </div><span>查看详情</span>
+                </a></li>
+                <?php } ?>
+                
+            </ul>
+            <div id="changpage"></div>
+          </div>
+          <?php }else{ ?>
+                <div class="tips"><img src="https://sjzz.ilhjy.cn/u0rkpw/202003/icon1583465772669.png"> 请更换关键词重新搜索 </div>
+           <?php } ?>
+    <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\0be3731ca43d7dd7dccd.html'); ?>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 底部 - common  -->
+  <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\19b1335c275df7034f41.html'); ?>
+
+<?php echo(C('cms:body:~','template')); ?></body>
+
+</html>

@@ -1,0 +1,111 @@
+<!--
+ * @Author: Mx
+ * @Date: 2022-11-14 21:42:11
+ * @Description: 专属定制
+-->
+<html>
+<?php include('D:\ayden\study\baidu\bbny2\cache\template\template\303cab853f27dda2a4ed.html'); ?>
+
+
+<body>
+
+    <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\e99111b00921f2b724e2.html'); ?>
+    <!-- banner - common-->
+    <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\35fb0f1ebc0d8f45d936.html'); ?>
+    <!-- 热门关键词 - common -->
+    <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\0d8670b0007c666332ca.html'); ?>
+    <!-- 您的位置 - common -->
+    <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\84434763ab389068b3bf.html'); ?>
+
+    <!-- 内页方案 -->
+    <div class="lib11380064_4">
+        <div class="main">
+            <div class="news_con">
+                <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\6eab7149b462a9c69ee3.html'); ?>
+                <div class="news_main">
+                    <!-- ReadedDataConfig  详情 [{ "path": "/service/cms_article/detail.html", "method": "post", "queryString":["art_id=<%=art_id%>"], "objName": "detail" }] -->
+                    <div class="lib11380064_4news_info_detail" data-lib="page/news_info1/news_info_detail">
+                        <!--文章详情-->
+                        <div class="content">
+                            <div class="news_tit">
+                                <h3 class="news_hot" data-id="79894" data-artid="292562"><?php echo($title); ?></h3>
+                                <div class="news_label"><span>日期：<?php echo(date('Y-m-d',$datetime)); ?></span></div>
+                            </div>
+                            <div class="news_pro">
+                                <div class="news_pcon">
+                                    <?php echo($content); ?>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+                            <div class="jdtjs">
+                                <div class="det_page">
+                                    <div><span>上一篇</span>
+                                        <?php $prevquery['cid']=$cid; ?>
+                                        <?php $prevquery['all']='0'; ?>
+                                        <?php $prevquery['order']='id asc'; ?>
+                                        <?php
+                                        $prevquery['where']['id>'] = $id;
+                                        ?>
+                                        <?php $prev=C('cms:article:getOne',$prevquery); ?>
+                                        <?php if($prev){ ?>
+                                        <a href="<?php echo($prev['link']); ?>" title="<?php echo($prev['title']); ?>"><?php echo($prev['title']); ?></a>
+                                        <?php }else{ ?>
+                                        没有了
+                                        <?php } ?>
+
+                                    </div>
+                                    <div><span>下一篇</span>
+                                        <?php $nextquery['cid']=$cid; ?>
+                                        <?php $nextquery['all']='0'; ?>
+                                        <?php $nextquery['order']='id desc'; ?>
+                                        <?php
+                                        $nextquery['where']['id<'] = $id;
+                                        ?>
+                                        <?php $next=C('cms:article:getOne',$nextquery); ?>
+                                        <?php if($next){ ?>
+                                        <a href="<?php echo($next['link']); ?>" title="<?php echo($next['title']); ?>"><?php echo($next['title']); ?></a>
+                                        <?php }else{ ?>
+                                        没有了
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news_hotnews_hot" data-lib="page/news_info1/news_hot">
+                                <div class="news_list">
+                                    <div class="title"><span>热门资讯</span><i> / hotnews</i></div>
+                                    <ul>
+                                        <?php $test['cid']='66618111'; ?>
+                                        <?php $test['where']['recommend']='1'; ?>
+                                        <?php $test['all']='1'; ?>
+                                        <?php $test['pagesize']='6'; ?>
+                                        <?php $articles=a($test); ?>
+                                        <?php foreach($articles as $article){ ?>
+                                        <li>
+                                            <a href="/newsInfo?art_id=340614&amp;menu_id=79919&amp;menu=CB87B73E-E97D-0C02-B6E2-D9022303B8B8"
+                                                class="dt_tit"><?php echo($article['title']); ?>
+                                            </a>
+                                            <a href="/newsInfo?art_id=340614&amp;menu_id=79919&amp;menu=CB87B73E-E97D-0C02-B6E2-D9022303B8B8"
+                                                class="dt_more">查看详情 &gt;
+                                            </a>
+                                        </li>
+                                        <?php } ?>
+                                    </ul>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--文章详情-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 底部 - common  -->
+    <?php include('D:\ayden\study\baidu\bbny2\cache\template\template\19b1335c275df7034f41.html'); ?>
+<?php echo(C('cms:body:~','template')); ?></body>
+
+</html><!-- 脚本开始 -->

@@ -1,0 +1,102 @@
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer-item-box">
+            <div class="footer-item">
+                <h3 class="title">产品展示</h3>
+                <ul>
+                    {loop nav(66618107,6) as $nav}
+                    <li><a href="{$nav.link}">{$nav.channelname}</a></li>
+                    {/loop}
+                </ul>
+            </div>
+
+            <div class="footer-item">
+                <h3 class="title">企业介绍</h3>
+                <ul>
+                    {loop nav(66618104,6) as $nav}
+                    <li><a href="{$nav.link}">{$nav.channelname}</a></li>
+                    {/loop}
+
+                </ul>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <h3 class="title">企业动态</h3>
+                <ul>
+                    {loop nav(66618111,6) as $nav}
+                    <li><a href="{$nav.link}">{$nav.channelname}</a></li>
+                    {/loop}
+
+                </ul>
+            </div>
+            <div class="footer-item">
+                <h3 class="title">联系我们</h3>
+                <ul>
+                    <li><a href="">电话：{$.66618116.phone}</a></li>
+                    <li><a href="">邮箱：{$.66618116.email}</a></li>
+                    <li><a href="">地址：{$.66618116.addres}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-code"></div>
+    </div>
+    <div class="Copyright">
+        <div class="wrap">
+            ©{date(Y)} CopyRight {$.0.title}. All rights reserved. {$.0.tongji} 备案号：{$.0.licence} <a target="_blank"
+                href="http://work.aydeng.club">技术支持：大鲨鱼引擎</a>
+        </div>
+    </div>
+</footer>
+<footer class="footerWap">
+
+    <div class="plist">
+        <p>电话：{$.66618116.phone}</p>
+        <p>邮箱：{$.66618116.email}</p>
+        <p>地址：{$.66618116.addres}</p>
+    </div>
+
+    <div class="Copyright">
+        ©{date(Y)} CopyRight {$.0.title}. All rights reserved. {$.0.tongji} 备案号：{$.0.licence} <a target="_blank"
+            href=http://work.aydeng.club">技术支持：大鲨鱼引擎</a>
+    </div>
+</footer>
+<script src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=27GGFdI8Q0AwrwIjjok7jh9VB9CNY5mw"></script>
+<script>
+    // 创建Map实例
+    var map = new BMapGL.Map("container");
+    console.log("map", map);
+
+    // 初始化地图,设置中心点坐标和地图级别
+    map.centerAndZoom("深圳市", 12);
+    // 开启鼠标滚轮缩放
+    map.enableScrollWheelZoom(true);
+    map.enableKeyboard();
+    map.enableContinuousZoom(); // 开启连续缩放效果
+    map.enableInertialDragging(); // 开启惯性拖拽效果
+    // 添加比例尺控件
+    var scaleCtrl = new BMapGL.ScaleControl();
+    map.addControl(scaleCtrl);
+    // 添加缩放控件
+    var zoomCtrl = new BMapGL.ZoomControl();
+    map.addControl(zoomCtrl);
+    //添加3D控件
+    var navi3DCtrl = new BMapGL.NavigationControl3D();
+    map.addControl(navi3DCtrl);
+    // 创建点标记
+    var point = new BMapGL.Point(113.906, 22.5);
+    map.centerAndZoom(point, 12);
+    var marker = new BMapGL.Marker(point);
+    // 在地图上添加点标记
+    map.addOverlay(marker);
+    // 创建信息窗口
+    var opts = {
+        width: 200,
+        height: 100,
+        title: "青青世界",
+    };
+    var infoWindow = new BMapGL.InfoWindow("地址：广东省深圳市南山区", opts);
+    // 点标记添加点击事件
+    marker.addEventListener("click", function () {
+        map.openInfoWindow(infoWindow, point); // 开启信息窗口
+    });
+</script>

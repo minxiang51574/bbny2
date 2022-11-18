@@ -1,0 +1,48 @@
+<footer>
+    <div class="wrap">
+        <div class="footer-item-box">
+            <div class="footer-item">
+                <h3 class="title">产品展示</h3>
+                <ul>
+                    <?php foreach(nav(66618107,6) as $nav){ ?>
+                    <li><a href="<?php echo($nav['link']); ?>"><?php echo($nav['channelname']); ?></a></li>
+                    <?php } ?>
+                </ul>
+            </div>
+
+            <div class="footer-item">
+                <h3 class="title">企业介绍</h3>
+                <ul>
+                    <?php foreach(nav(66618104,6) as $nav){ ?>
+                    <li><a href="<?php echo($nav['link']); ?>"><?php echo($nav['channelname']); ?></a></li>
+                    <?php } ?>
+
+                </ul>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <h3 class="title">企业动态</h3>
+                <ul>
+                    <?php foreach(nav(66618111,6) as $nav){ ?>
+                    <li><a href="<?php echo($nav['link']); ?>"><?php echo($nav['channelname']); ?></a></li>
+                    <?php } ?>
+
+                </ul>
+            </div>
+            <div class="footer-item">
+                <h3 class="title">联系我们</h3>
+                <ul>
+                    <li><a href="">电话：<?php echo($GLOBALS['channel'][66618116]['phone']); ?></a></li>
+                    <li><a href="">邮箱：<?php echo($GLOBALS['channel'][66618116]['email']); ?></a></li>
+                    <li><a href="">地址：<?php echo($GLOBALS['channel'][66618116]['addres']); ?></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-code"></div>
+    </div>
+    <div class="Copyright">
+        <div class="wrap">
+            Copyright ©2022 四川航佳生物科技有限公司 版权所有 技术支持：万商云集
+        </div>
+    </div>
+</footer>

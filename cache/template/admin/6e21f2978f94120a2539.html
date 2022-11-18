@@ -1,0 +1,236 @@
+<?php if(!defined('ClassCms')) {exit();}?>
+<!DOCTYPE html>
+<html>
+<head><?php echo(C('this:head',$title)); ?><?php echo(C('cms:head:~','admin')); ?></head>
+<body>
+
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-card">
+
+            <div class="layui-card-header">
+                    <div class="layui-row">
+                        <div id="cms-breadcrumb"><?php echo(C('this:breadcrumb',$breadcrumb)); ?></div>
+                        <div id="cms-right-top-button"></div>
+                    </div>
+            </div>
+
+    <div class="layui-card-body layui-form">
+            <table class="layui-table">
+            <colgroup>
+              <col width="80">
+              <col>
+            </colgroup>
+            <tbody>
+
+<tr>
+<td align="right">模型:</td>
+<td>
+<?php echo($module['modulename']); ?>[<?php echo($module['hash']); ?>] 
+<?php if(P('channel:add')){ ?><a class="layui-btn layui-btn-xs layui-btn-primary"  href="?do=admin:channel:add&classhash=<?php echo($classinfo['hash']); ?>&modulehash=<?php echo($module['hash']); ?>">增加栏目</a> <?php } ?>
+<?php if(P('module:edit')){ ?><a class="layui-btn layui-btn-xs layui-btn-primary moduleedit">修改</a> <?php } ?>
+<?php if(P('module:del')){ ?><a class="layui-btn layui-btn-xs layui-btn-primary moduledel">删除</a> <?php } ?>
+</td>
+</tr>
+
+<?php if(P('module:edit')){ ?>
+<tr>
+<td align="right">状态:</td>
+<td>
+<?php if($module['enabled']){ ?>
+    <input type="checkbox" name="<?php echo($module['id']); ?>" lay-filter="enabled" checked lay-skin="switch">
+<?php }else{ ?>
+    <input type="checkbox" name="<?php echo($module['id']); ?>" lay-filter="enabled" lay-skin="switch">
+    当前模型已停用,下属栏目页面无法访问
+<?php } ?>
+</td>
+</tr>
+<?php } ?>
+
+
+<?php if(P('route:index')){ ?>
+    <tr>
+    <td align="right"><a class="layui-btn layui-btn-sm layui-btn-primary" href="?do=admin:route:index&id=<?php echo($module['id']); ?>">页面</a></td>
+    <td>
+    <?php if(count($routes)){ ?>
+        <?php foreach($routes as $route){ ?>
+            <a href="?do=admin:route:edit&id=<?php echo($route['id']); ?>" class="layui-btn  layui-btn-primary layui-btn-sm<?php if($route['enabled']==0){ ?> layui-btn-disabled<?php } ?>"><?php echo($route['hash']); ?></a>
+        <?php } ?>
+    <?php }else{ ?>
+        无
+    <?php } ?>
+    </td>
+    </tr>
+<?php } ?>
+
+<?php if(P('var:index')){ ?>
+    <tr>
+    <td align="right"><a class="layui-btn layui-btn-sm layui-btn-primary" href="?do=admin:var:index&id=<?php echo($module['id']); ?>">变量</a></td>
+    <td>
+        <?php if(count($vars)){ ?>
+            <?php if(count($varstabs)>1){ ?>
+                <table class="layui-table">
+                    <?php foreach($varstabs as $tab){ ?>
+                        <tr>
+                            <td>
+                                <?php foreach($vars as $var){ ?>
+                                    <?php if($var['tabname']==$tab){ ?>
+                                    <a href="?do=admin:var:edit&id=<?php echo($var['id']); ?>" class="layui-btn  layui-btn-primary layui-btn-sm<?php if($var['enabled']==0){ ?> layui-btn-disabled<?php } ?>"><?php echo($var['formname']); ?> <?php echo($var['hash']); ?></a>
+                                    <?php } ?>
+                                <?php } ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </table>
+            <?php }else{ ?>
+                <?php foreach($vars as $var){ ?>
+                    <a href="?do=admin:var:edit&id=<?php echo($var['id']); ?>" class="layui-btn  layui-btn-primary layui-btn-sm<?php if($var['enabled']==0){ ?> layui-btn-disabled<?php } ?>"><?php echo($var['formname']); ?> <?php echo($var['hash']); ?></a>
+                <?php } ?>
+            <?php } ?>
+        <?php }else{ ?>
+            无
+        <?php } ?>
+    </td>
+    </tr>
+<?php } ?>
+
+
+<?php if(P('column:index')){ ?>
+    <tr>
+    <td align="right"><a class="layui-btn layui-btn-sm layui-btn-primary" href="?do=admin:column:index&id=<?php echo($module['id']); ?>">字段</a></td>
+    <td>
+        <?php if(count($columns)){ ?>
+            <?php if(count($columnstabs)>1){ ?>
+                <table class="layui-table">
+                    <?php foreach($columnstabs as $tab){ ?>
+                        <tr>
+                            <td>
+                                <?php foreach($columns as $column){ ?>
+                                    <?php if($column['tabname']==$tab){ ?>
+                                    <a href="?do=admin:column:edit&id=<?php echo($column['id']); ?>" class="layui-btn  layui-btn-primary layui-btn-sm<?php if($column['enabled']==0){ ?> layui-btn-disabled<?php } ?>"><?php if($column['indexshow']){ ?><i class="layui-icon layui-icon-table"></i><?php } ?><?php echo($column['formname']); ?> <?php echo($column['hash']); ?></a>
+                                    <?php } ?>
+                                <?php } ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </table>
+            <?php }else{ ?>
+                <?php foreach($columns as $column){ ?>
+                    <a href="?do=admin:column:edit&id=<?php echo($column['id']); ?>" class="layui-btn  layui-btn-primary layui-btn-sm<?php if($column['enabled']==0){ ?> layui-btn-disabled<?php } ?>"><?php if($column['indexshow']){ ?><i class="layui-icon layui-icon-table"></i><?php } ?><?php echo($column['formname']); ?> <?php echo($column['hash']); ?></a>
+                <?php } ?>
+            <?php } ?>
+        <?php }else{ ?>
+            无
+        <?php } ?>
+    </td>
+    </tr>
+<?php } ?>
+
+<?php if(P('module:permission') && count($roles)>1 && count($actions)){ ?>
+    <tr>
+    <td align="right"><a class="layui-btn layui-btn-sm layui-btn-primary" href="?do=admin:module:permission&id=<?php echo($module['id']); ?>">权限</a></td>
+    <td>
+        <table class="layui-table">
+          <colgroup>
+            <col width="150">
+            <col>
+          </colgroup>
+        <?php foreach($roles as $role){ ?>
+            <tr>
+            <td>
+                <?php echo($role['rolename']); ?>[<?php echo($role['hash']); ?>]
+            </td>
+            <td>
+            <?php if($role['_editabled']){ ?>
+                <?php foreach($actions as $thiskey=>$actionname){ ?>
+                    <?php if(stripos($thiskey,'|false')){ ?>
+                        <input type="checkbox" name="<?php echo($role['hash']); ?>_role[<?php echo($thiskey); ?>]" title="<?php echo($actionname[0]); ?>" lay-skin="primary" disabled>
+                    <?php }else{ ?>
+                        <input type="checkbox" name="<?php echo($role['hash']); ?>_role[<?php echo($thiskey); ?>]" title="<?php echo($actionname[0]); ?>" lay-skin="primary" checked disabled>
+                    <?php } ?>
+                <?php } ?>
+            <?php }else{ ?>
+                <?php foreach($actions as $thiskey=>$actionname){ ?>
+                    <?php $checkkey=C('cms:module:authStr',$module,$thiskey); ?>
+                    <input type="checkbox" name="<?php echo($role['hash']); ?>_role[<?php echo($thiskey); ?>]" title="<?php echo($actionname[0]); ?>" lay-skin="primary"<?php if(C('this:roleCheck',$checkkey,$role['hash'],false)){ ?> checked<?php } ?> disabled>
+                <?php } ?>
+            <?php } ?>
+            </td>
+            </tr>
+        <?php } ?>
+        </table>
+    </td>
+    </tr>
+<?php } ?>
+
+            </tbody>
+          </table>
+          </div>
+
+
+
+ </div>
+  </div>
+  </div>
+  
+<script>
+    layui.use(['index','form'],function(){
+
+        var $ = layui.$;
+
+        layui.form.on('switch(enabled)', function(obj){
+            layui.admin.req({type:'post',url:"?do=admin:module:editPost",data:{ id: <?php echo($module['id']); ?>, enabled: obj.elem.checked},async:true,beforeSend:function(){
+                layui.admin.load('提交中...');
+            },done: function(res){
+                if (res.error==0)
+                {
+                    var confirm=layer.confirm(res.msg, {btn: ['好的','返回'],shadeClose:1},function(){layui.admin.events.reload();},function(){
+                        layui.admin.events.back();
+                        });
+                }
+            }});
+        });
+
+        <?php if(P('module:edit')){ ?>
+        $('.moduleedit').click(function(){
+            layer.prompt({
+              value: '<?php echo($module['modulename']); ?>',
+              title: '模型名称'
+            }, 
+              function(value, index, elem){
+                layui.admin.req({type:'post',url:"?do=admin:module:editPost",data:{ id: <?php echo($module['id']); ?>, modulename: value},async:true,beforeSend:function(){
+                    layui.admin.load('提交中...');
+                },done: function(res){
+                    if (res.error==0)
+                    {
+                        var confirm=layer.confirm(res.msg, {btn: ['好的','返回'],shadeClose:1},function(){layui.admin.events.reload();},function(){
+                            layui.admin.events.back();
+                        });
+                    }
+                }});
+            });
+            
+        });
+        <?php } ?>
+
+        <?php if(P('module:del')){ ?>
+        layui.$('.moduledel').click(function(){
+            layui.layer.confirm('是否删除模型?<br>注意:该模型的所有内容将被清空,请谨慎操作!!!<br>如模型下属栏目较多,删除可能会超时,请重试.', {
+              btn: ['删除','取消'],skin:'layer-danger',title:'请确认',shadeClose:1}, function(){
+                layui.admin.req({type:'post',url:"?do=admin:module:del",data:{ id: <?php echo($module['id']); ?>},timeout: 30000,async:true,beforeSend:function(){
+                    layui.admin.load('删除中,如超时,请重试...');
+                },done: function(res){
+                    if (res.error==0)
+                    {
+                        var confirm=layer.confirm(res.msg, {btn: ['返回'],shadeClose:1},function(){window.location='?do=admin:module:index&classhash=<?php echo($module['classhash']); ?>'});
+                    }
+                }});
+            });
+        });
+        <?php } ?>
+
+});
+</script>
+<?php echo(C('this:body:~')); ?>
+<?php echo(C('cms:body:~','admin')); ?></body>
+</html>
